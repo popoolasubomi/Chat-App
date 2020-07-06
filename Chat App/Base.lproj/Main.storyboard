@@ -45,9 +45,7 @@
                                 <rect key="frame" x="102" y="535" width="68" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.1092401616" green="0.25883725260000001" blue="0.52704934420000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hz-gt-1Y0"/>
                                 </connections>
@@ -56,41 +54,67 @@
                                 <rect key="frame" x="266" y="535" width="47" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.1092401616" green="0.25883725260000001" blue="0.52704934420000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uib-E1-aL3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oZc-jm-V4J" appends="YES" id="Il9-nC-hEE"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="lYD-s0-iqf" id="jsm-fu-qmC"/>
                         <outlet property="usernameField" destination="4xz-G8-SIZ" id="i2k-gl-0mX"/>
-                        <segue destination="Opy-d5-883" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="LLC-c6-V0K"/>
+                        <segue destination="BUS-FB-0Fa" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="LLC-c6-V0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oZc-jm-V4J">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="8NQ-0D-v3H"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="iO1-3F-kEB">
             <objects>
-                <viewController id="Opy-d5-883" sceneMemberID="viewController">
+                <viewController id="Opy-d5-883" customClass="ChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7B-Sz-ali">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sOp-YT-EYN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8pJ-9I-qzt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bo-xt-OWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="138"/>
+            <point key="canvasLocation" x="2226.0869565217395" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FgF-MY-mBI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUS-FB-0Fa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0z3-eu-QqG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Opy-d5-883" kind="relationship" relationship="rootViewController" id="zhu-u2-sfx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGr-x4-Vyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="138"/>
         </scene>
     </scenes>
 </document>
